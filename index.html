@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Likhit Naidu — Software Engineer</title>
+<meta name="description" content="Likhit Naidu - Computer Science Engineering student focused on software development and applied AI.">
+<style>
+/* ---------------------------------------------
+   Tokens
+--------------------------------------------- */
+:root{
+  --bg: #F5F6F1;
+  --ink: #15160F;
+  --muted: #6B6E62;
+  --line: #DCDFD3;
+  --accent: #2F5D45;
+  --accent-soft: #E4EBE1;
+  --paper: #FBFBF8;
+
+  --sans: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --max: 720px;
+  --edge: clamp(24px, 6vw, 96px);
+}
+
+*{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+body{
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a{ color: inherit; }
+
+.frame{
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 var(--edge);
+}
+
+/* ---------------------------------------------
+   Header
+--------------------------------------------- */
+.site-header{
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.mark{
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.site-nav{
+  display: flex;
+  gap: 24px;
+  margin-right: auto;
+}
+
+.site-nav a{
+  text-decoration: none;
+  font-size: 14.5px;
+  color: var(--muted);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: color .15s ease, border-color .15s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible{
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.status{
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+.dot{
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+}
+
+/* ---------------------------------------------
+   Shared section rhythm
+--------------------------------------------- */
+main > section{
+  padding: 96px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+main > section:last-child{ border-bottom: none; }
+
+.section-index{
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 40px;
+}
+
+/* ---------------------------------------------
+   Hero
+--------------------------------------------- */
+.hero{ padding-top: 72px; }
+
+.hero-line{
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 28px;
+}
+
+.hero h1{
+  font-size: clamp(38px, 6vw, 64px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin: 0 0 28px;
+  max-width: 15ch;
+  font-weight: 600;
+}
+
+.hero-body{
+  max-width: 56ch;
+  font-size: 18px;
+  color: var(--ink);
+  margin: 0 0 40px;
+}
+
+.hero-actions{
+  display: flex;
+  gap: 14px;
+  margin-bottom: 44px;
+  flex-wrap: wrap;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 24px;
+  font-family: var(--sans);
+  font-size: 14.5px;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease, border-color .15s ease, transform .1s ease;
+}
+
+.btn:active{ transform: translateY(1px); }
+
+.btn-primary{
+  background: var(--ink);
+  color: var(--paper);
+}
+.btn-primary:hover,
+.btn-primary:focus-visible{ background: var(--accent); }
+
+.btn-ghost{
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+.btn-ghost:hover,
+.btn-ghost:focus-visible{ border-color: var(--ink); }
+
+.hero-links{
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-links a{
+  font-family: var(--mono);
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-links a:hover,
+.hero-links a:focus-visible{
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+/* ---------------------------------------------
+   About
+--------------------------------------------- */
+.about-grid{
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 56px;
+}
+
+.about-lead{
+  font-size: 24px;
+  line-height: 1.35;
+  margin: 0;
+  max-width: 24ch;
+  font-weight: 500;
+}
+
+.about-body p{
+  max-width: 60ch;
+  margin: 0 0 18px;
+  color: var(--ink);
+}
+
+.tag-list{
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.tag-list li{
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 6px 11px;
+  border-radius: 3px;
+}
+
+/* ---------------------------------------------
+   Skills
+--------------------------------------------- */
+.skills-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.skill-col h3{
+  font-size: 17px;
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+.skill-desc{
+  color: var(--muted);
+  font-size: 14.5px;
+  margin: 0 0 20px;
+  max-width: 28ch;
+}
+
+.skill-col ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skill-col li{
+  padding: 11px 0;
+  border-top: 1px solid var(--line);
+  font-size: 15px;
+}
+
+.skill-col li:last-child{ padding-bottom: 0; }
+
+.trait-list li{
+  font-family: var(--mono);
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+/* ---------------------------------------------
+   Work
+--------------------------------------------- */
+.project{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 32px;
+  padding: 36px 0;
+  border-top: 1px solid var(--line);
+}
+
+.project:first-of-type{ border-top: none; padding-top: 0; }
+
+.project-stack{
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--muted);
+  display: block;
+}
+
+.project h3{
+  font-size: 21px;
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.project p{
+  max-width: 58ch;
+  margin: 0 0 16px;
+  color: var(--ink);
+}
+
+.project-link{
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 1px;
+}
+
+.project-link:hover,
+.project-link:focus-visible{
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ---------------------------------------------
+   Contact
+--------------------------------------------- */
+.contact h2{
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.2;
+  margin: 0 0 20px;
+  font-weight: 600;
+}
+
+.contact-body{
+  max-width: 50ch;
+  color: var(--muted);
+  margin: 0 0 44px;
+  font-size: 16.5px;
+}
+
+.contact-form{
+  max-width: 480px;
+  margin: 0 0 56px;
+}
+
+.field{
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.field label{
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.field input,
+.field textarea{
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 11px 13px;
+  resize: vertical;
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+
+.form-note{
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--accent);
+  margin: 14px 0 0;
+  min-height: 1em;
+}
+
+.contact-links{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.contact-links a{
+  font-family: var(--mono);
+  font-size: 13.5px;
+  text-decoration: none;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-links a:hover,
+.contact-links a:focus-visible{
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+/* ---------------------------------------------
+   Footer
+--------------------------------------------- */
+.site-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 0 44px;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+.footer-status{
+  font-family: var(--mono);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* ---------------------------------------------
+   Responsive
+--------------------------------------------- */
+@media (max-width: 760px){
+  .site-nav{ display: none; }
+
+  main > section{ padding: 64px 0; }
+
+  .about-grid{ grid-template-columns: 1fr; gap: 24px; }
+  .about-lead{ max-width: none; }
+
+  .skills-grid{ grid-template-columns: 1fr; gap: 32px; }
+
+  .project{ grid-template-columns: 1fr; gap: 10px; }
+
+  .site-footer{ flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="frame">
+
+  <header class="site-header">
+    <a href="#top" class="mark">LN</a>
+    <nav class="site-nav">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <span class="status"><span class="dot" aria-hidden="true"></span>Open to work</span>
+  </header>
+
+  <main>
+
+    <section class="hero" id="top">
+      <p class="hero-line">01 — CS Engineering student, India</p>
+      <h1>Likhit Naidu builds<br>software with a plan.</h1>
+      <p class="hero-body">
+        I focus on software development and applied AI — writing Python and
+        JavaScript with an emphasis on data structures, algorithms, and
+        system design that holds up in production, not just demos.
+      </p>
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary">See the work</a>
+        <a href="https://drive.google.com/file/d/1aaGJYZrbCwJUAp_ienJk1tYDU9Dr1MOn/view" class="btn btn-ghost" target="_blank" rel="noopener">Resume</a>
+      </div>
+      <ul class="hero-links">
+        <li><a href="https://github.com/geekynads" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/m-likhit-naidu-906083217/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://x.com/M_Likhit_Naidu" target="_blank" rel="noopener">X</a></li>
+      </ul>
+    </section>
+
+    <section class="about" id="about">
+      <p class="section-index">02 — About</p>
+      <div class="about-grid">
+        <p class="about-lead">
+          I treat engineering as product work: understand the problem before
+          touching the solution.
+        </p>
+        <div class="about-body">
+          <p>
+            Rather than shipping features for their own sake, I spend time
+            understanding what a problem actually requires, then design
+            toward something that creates measurable impact once it's live.
+          </p>
+          <p>
+            Alongside my CS degree, most of my free time goes into
+            researching how AI changes the way people use software. My
+            working belief: the best products disappear into the
+            background.
+          </p>
+          <ul class="tag-list" aria-label="Core tools">
+            <li>JavaScript (ES6+)</li>
+            <li>TypeScript</li>
+            <li>React</li>
+            <li>Python</li>
+            <li>Llama 3</li>
+            <li>Tailwind CSS</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills" id="skills">
+      <p class="section-index">03 — Skills &amp; stack</p>
+      <div class="skills-grid">
+        <div class="skill-col">
+          <h3>Frontend</h3>
+          <p class="skill-desc">Building interfaces that feel considered, not assembled.</p>
+          <ul>
+            <li>HTML &amp; CSS</li>
+            <li>React</li>
+            <li>TypeScript</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h3>AI &amp; emerging</h3>
+          <p class="skill-desc">Learning how models change what software can do.</p>
+          <ul>
+            <li>Prompt engineering</li>
+            <li>Python</li>
+            <li>LLM integration</li>
+          </ul>
+        </div>
+        <div class="skill-col traits">
+          <h3>Working style</h3>
+          <ul class="trait-list">
+            <li>Problem solver</li>
+            <li>Quick learner</li>
+            <li>Team player</li>
+            <li>Product thinking</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="work" id="work">
+      <p class="section-index">04 — Featured projects</p>
+
+      <article class="project">
+        <div class="project-meta">
+          <span class="project-stack">React · FastAPI · Nemotron LLM</span>
+        </div>
+        <h3>GitHub Repo RAG System</h3>
+        <p>A retrieval-augmented pipeline that reverse-engineers any GitHub repo from its link, using the free Nemotron LLM model to explain structure and intent.</p>
+        <a href="https://likhitv.vercel.app/" class="project-link" target="_blank" rel="noopener">View project ↗</a>
+      </article>
+
+      <article class="project">
+        <div class="project-meta">
+          <span class="project-stack">React · TypeScript · Tailwind</span>
+        </div>
+        <h3>Marupade — Lost &amp; Found</h3>
+        <p>A centralized platform where people can securely document, track, and reclaim misplaced belongings, built around a simple, trustworthy claim flow.</p>
+        <a href="https://github.com/likhitnaidu/lost_and_found_portal" class="project-link" target="_blank" rel="noopener">View project ↗</a>
+      </article>
+
+      <article class="project">
+        <div class="project-meta">
+          <span class="project-stack">Python · FastAPI · TensorFlow</span>
+        </div>
+        <h3>Gesture-Based IDE</h3>
+        <p>A hands-optional coding environment built for accessibility, pairing sessions, or keeping hands on hardware while writing code.</p>
+        <a href="https://likhitv.vercel.app/gesture-based-ide-lac.vercel.app" class="project-link" target="_blank" rel="noopener">View project ↗</a>
+      </article>
+    </section>
+
+    <section class="contact" id="contact">
+      <p class="section-index">05 — Get in touch</p>
+      <h2>Currently looking for<br>new opportunities.</h2>
+      <p class="contact-body">
+        Whether you have a question, a role in mind, or just want to say hi —
+        my inbox is open.
+      </p>
+
+      <form class="contact-form" id="contact-form">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send message</button>
+        <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+      </form>
+
+      <ul class="contact-links">
+        <li><a href="mailto:m.likhitwork@gmail.com">Email</a></li>
+        <li><a href="https://github.com/likhitnaidu" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/m-likhit-naidu-906083217/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://leetcode.com/u/Likhit_naidu/" target="_blank" rel="noopener">LeetCode</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <span>Likhit Naidu</span>
+    <span class="footer-status"><span class="dot" aria-hidden="true"></span>Available for hire · India</span>
+  </footer>
+
+</div>
+
+<script>
+// Contact form: no backend, so we build a mailto draft from the fields
+// and confirm to the user that their mail client is opening.
+const form = document.getElementById('contact-form');
+const note = document.getElementById('form-note');
+
+if (form) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !message) {
+      note.textContent = 'Fill in every field before sending.';
+      return;
+    }
+
+    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+    window.location.href = `mailto:m.likhitwork@gmail.com?subject=${subject}&body=${body}`;
+
+    note.textContent = 'Opening your email client…';
+    form.reset();
+  });
+}
+
+// Active nav state: highlight the current section link while scrolling
+const navLinks = document.querySelectorAll('.site-nav a');
+const sections = Array.from(navLinks)
+  .map((link) => document.querySelector(link.getAttribute('href')))
+  .filter(Boolean);
+
+if ('IntersectionObserver' in window && sections.length) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = `#${entry.target.id}`;
+          navLinks.forEach((link) => {
+            link.style.color = link.getAttribute('href') === id ? 'var(--ink)' : '';
+          });
+        }
+      });
+    },
+    { rootMargin: '-40% 0px -50% 0px' }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+}
+
+</script>
+</body>
+</html>
