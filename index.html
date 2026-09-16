@@ -132,6 +132,13 @@ main > section:last-child{ border-bottom: none; }
 --------------------------------------------- */
 .hero{ padding-top: 72px; }
 
+.hero-grid{
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
 .hero-line{
   font-family: var(--mono);
   font-size: 13px;
@@ -214,6 +221,19 @@ main > section:last-child{ border-bottom: none; }
 .hero-links a:focus-visible{
   color: var(--ink);
   border-color: var(--ink);
+}
+
+.hero-portrait{
+  position: relative;
+  justify-self: center;
+  width: 100%;
+  max-width: 340px;
+}
+
+.hero-portrait img{
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* ---------------------------------------------
@@ -457,6 +477,9 @@ main > section:last-child{ border-bottom: none; }
 
   main > section{ padding: 64px 0; }
 
+  .hero-grid{ grid-template-columns: 1fr; gap: 32px; }
+  .hero-portrait{ order: -1; max-width: 240px; }
+
   .about-grid{ grid-template-columns: 1fr; gap: 24px; }
   .about-lead{ max-width: none; }
 
@@ -486,22 +509,30 @@ main > section:last-child{ border-bottom: none; }
   <main>
 
     <section class="hero" id="top">
-      <p class="hero-line">01 — CS Engineering student, India</p>
-      <h1>Likhit Naidu builds<br>software with a plan.</h1>
-      <p class="hero-body">
-        I focus on software development and applied AI — writing Python and
-        JavaScript with an emphasis on data structures, algorithms, and
-        system design that holds up in production, not just demos.
-      </p>
-      <div class="hero-actions">
-        <a href="#work" class="btn btn-primary">See the work</a>
-        <a href="https://drive.google.com/file/d/1aaGJYZrbCwJUAp_ienJk1tYDU9Dr1MOn/view" class="btn btn-ghost" target="_blank" rel="noopener">Resume</a>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="hero-line">01 — CS Engineering student, India</p>
+          <h1>Likhit Naidu builds<br>software with a plan.</h1>
+          <p class="hero-body">
+            I focus on software development and applied AI — writing Python and
+            JavaScript with an emphasis on data structures, algorithms, and
+            system design that holds up in production, not just demos.
+          </p>
+          <div class="hero-actions">
+            <a href="#work" class="btn btn-primary">See the work</a>
+            <a href="https://drive.google.com/file/d/1aaGJYZrbCwJUAp_ienJk1tYDU9Dr1MOn/view" class="btn btn-ghost" target="_blank" rel="noopener">Resume</a>
+          </div>
+          <ul class="hero-links">
+            <li><a href="https://github.com/geekynads" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://linkedin.com/in/m-likhit-naidu-906083217/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://x.com/M_Likhit_Naidu" target="_blank" rel="noopener">X</a></li>
+          </ul>
+        </div>
+        <div class="hero-portrait">
+          
+          <img src="img.png" alt="Pencil sketch portrait of Likhit Naidu">
+        </div>
       </div>
-      <ul class="hero-links">
-        <li><a href="https://github.com/geekynads" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="https://linkedin.com/in/m-likhit-naidu-906083217/" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a href="https://x.com/M_Likhit_Naidu" target="_blank" rel="noopener">X</a></li>
-      </ul>
     </section>
 
     <section class="about" id="about">
